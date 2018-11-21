@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="17391" started-at="2018-11-21T22:23:25Z" finished-at="2018-11-21T22:23:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="17391" started-at="2018-11-21T22:23:25Z" finished-at="2018-11-21T22:23:42Z">
+      <class name="testcases.HappyFlowTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@149494d8]" name="setup" is-config="true" duration-ms="3507" started-at="2018-11-21T22:23:25Z" finished-at="2018-11-21T22:23:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="succesTest()[pri:1, instance:testcases.HappyFlowTest@149494d8]" name="succesTest" duration-ms="9894" started-at="2018-11-21T22:23:28Z" finished-at="2018-11-21T22:23:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- succesTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@149494d8]" name="teardown" is-config="true" duration-ms="3968" started-at="2018-11-21T22:23:38Z" finished-at="2018-11-21T22:23:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testcases.HappyFlowTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

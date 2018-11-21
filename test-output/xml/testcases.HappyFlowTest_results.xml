@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HappyFlowTest"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="3.991">
+  <properties />
+  
+  
+            <testcase name="succesTest" time="1.279" classname="testcases.HappyFlowTest" />
+                <testcase name="failedTest" time="2.712" classname="testcases.HappyFlowTest" />
+      
+</testsuite>
