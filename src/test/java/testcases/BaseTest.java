@@ -20,7 +20,6 @@ public class BaseTest {
 		//a wrapper for properties
 		config = new PropertiesWrapper("Config");
 		or = new PropertiesWrapper("OR");
-		//log.debug("all is great");
 		//a wrapper for the webdriver
 		driverWrapper = new WebDriverWrapper();
 		//here we can add the propery for the browser we initiate the test OR using annotation

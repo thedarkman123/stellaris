@@ -96,8 +96,10 @@ public class PageObjects  {
 		//Career functions
 		public static void openAndChooseOptionOccupation(int optionNum) {
 			//This is because of firefox
-			driverWrapper.getElementByType("user-occupation", "id","presence").click();
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationSpecificXpath"), "xpath","visible").click();
+			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationId"),"id","presence")
+			.click();
+			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationSpecificXpath"), "xpath","visible")
+			.click();
 			
 //		    Select s = new Select(driverWrapper
 //		    		    .get_Element(By.xpath(propertiesWrapper
@@ -107,10 +109,10 @@ public class PageObjects  {
 		
 		public static void openAndChooseUserStatus(int optionNum) {
 			//This is because of firefox
-			driverWrapper.getElementByType("user-status", "id", "presence").click();
-			driverWrapper.getElementByType(
-					propertiesWrapper.getProp("userStatusSpecificXpath")
-					,"xpath","visible").click();
+			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusId"),"id","presence")
+			.click();
+			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusSpecificXpath"),"xpath","visible")
+			.click();
 			
 //		    Select s = new Select(driverWrapper
 //	    		    .get_Element(By.xpath(propertiesWrapper
@@ -118,11 +120,13 @@ public class PageObjects  {
 //			s.selectByIndex(optionNum);		
 		}
 		
+		//General functions
 		public static void goToNextStep() { 
 			driverWrapper.getElementByXpath(
 			propertiesWrapper.getProp("nextButtonXpath"))
 			.click();	
 		}
+		
 		
 		public static void clickSubmit() { 
 			driverWrapper.getElementByXpath(
