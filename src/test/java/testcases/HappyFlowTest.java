@@ -1,6 +1,7 @@
 package testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pageobject.GenericPageObject;
@@ -8,9 +9,11 @@ import pageobject.PageObjects;
 import pageobject.PageObjects.StellarApplication;
 import utilities.PropertiesWrapper;
 
+@Listeners(listeners.CustomListeners.class)
+
 public class HappyFlowTest extends BasicTest {
 
-	@Test(priority=2)
+	@Test(priority=1)
 	public void succesTest() {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
@@ -50,6 +53,7 @@ public class HappyFlowTest extends BasicTest {
 	    String titleOfCurrentActivePanel = driverWrapper
 		.getElementByType("//div[@class='form-panel active']", "xpath", "located")
 		.getAttribute("id");
+	    
 	    Assert.assertEquals(titleOfCurrentActivePanel, "personal-info");
 	}
 }

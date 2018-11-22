@@ -11,7 +11,7 @@ import utilities.PropertiesWrapper;
 import utilities.WebDriverWrapper;
 
 public class BasicTest {
-	WebDriverWrapper driverWrapper;
+	public static WebDriverWrapper driverWrapper;
 	PropertiesWrapper config,or;
 	Logger log = Logger.getLogger("appLogger");
 
