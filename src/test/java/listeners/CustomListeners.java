@@ -21,12 +21,12 @@ public class CustomListeners implements ITestListener {
 
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-		System.out.println(result.getMethod().toString() + " success");
+		System.out.println(result.getName().toString() + " success");
 	}
 
 	public void onTestFailure(ITestResult result) {
 		//usually should be logged, but no need for that, so only console printing
-		System.out.println(result.getMethod().toString() + " failed");
+		System.out.println(result.getName() + " failed: ");
 		System.out.println(result.getThrowable().getMessage().toString());
         TestUtils.captureScreenshot(result.getName());
 	}

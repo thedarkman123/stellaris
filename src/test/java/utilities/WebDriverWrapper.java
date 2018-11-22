@@ -1,6 +1,4 @@
 package utilities;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,19 +12,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
 public class WebDriverWrapper {
 
-	public WebDriver wb;
+	public WebDriver wb = null;
 
-	public void init(String browser) {
-		
-		//set a default one, no matter which one
-		System.setProperty("webdriver.chrome.driver", 
-				System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\chromedriver.exe");
-		wb = new ChromeDriver();
-		
-		//just to show initialization of other 
-		if (browser.equals("ff") || browser.equals("firefox")) {
+	public void init(String browser) {	
+		if (browser.equals("chrome")) {
+			//set a default one, no matter which one
+			System.setProperty("webdriver.chrome.driver", 
+					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\chromedriver.exe");
+			wb = new ChromeDriver();
+		} else if (browser.equals("firefox")) {
+			System.setProperty("webdriver.gecko.driver", 
+					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\geckodriver.exe");
 			wb = new FirefoxDriver(); 
 		}
 	}

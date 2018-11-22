@@ -4,73 +4,57 @@
   <artifactId>qaautomation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-  		<dependency>
-
-			<groupId>org.seleniumhq.selenium</groupId>
-
-			<artifactId>selenium-java</artifactId>
-
-			<version>2.53.1</version>
-
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+  		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.14.0</version>
+</dependency>
 		<dependency>
 		    <groupId>org.testng</groupId>
 		    <artifactId>testng</artifactId>
 		    <version>6.14.3</version>
 		    <scope>test</scope>
 		</dependency>
-
+		
 		<dependency>
-
 			<groupId>com.relevantcodes</groupId>
-
 			<artifactId>extentreports</artifactId>
-
 			<version>2.41.2</version>
-
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
-
 		<dependency>
-
 			<groupId>org.uncommons</groupId>
-
 			<artifactId>reportng</artifactId>
-
 			<version>1.1.4</version>
-
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
-
-
-
 		<dependency>
-
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>23.0</version>
+		</dependency>
+	
+		<dependency>
 			<groupId>com.google.inject</groupId>
-
 			<artifactId>guice</artifactId>
-
 			<version>4.1.0</version>
-
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-
-
-
+		
 		<dependency>
-
-			<groupId>log4j</groupId>
-
-			<artifactId>log4j</artifactId>
-
-			<version>1.2.17</version>
-
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.2</version>
 		</dependency>
+
+	
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
   </dependencies>
   <build>
 		<plugins>

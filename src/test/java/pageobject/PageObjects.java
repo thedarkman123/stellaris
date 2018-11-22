@@ -45,6 +45,7 @@ public class PageObjects  {
 			clickSubmit();
 		}
 		
+		//Your commitment functions
 		public static void checkAllCheckboxes() {
 			List<WebElement> els = driverWrapper
 			.getElements(propertiesWrapper
@@ -54,12 +55,14 @@ public class PageObjects  {
 			}
 		}
 		
+		//About you functions
 		public static void enterLinkedIn(String linkedIn) {
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("linkInId"))
 			.sendKeys(linkedIn);
 		}
 		
+		//Personal information functions
 		public static void enterFirstName(String firstName) { //can be multiple possiblities here
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("userFirstNameId"))
@@ -90,6 +93,7 @@ public class PageObjects  {
 			.sendKeys(randTxt);
 		}
 		
+		//Career functions
 		public static void openAndChooseOptionOccupation(int optionNum) {
 		    Select s = new Select(driverWrapper
 		    		    .get_Element(By.xpath(propertiesWrapper

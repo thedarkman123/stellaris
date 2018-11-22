@@ -2,16 +2,28 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26077" started-at="2018-11-22T12:12:42Z" finished-at="2018-11-22T12:13:08Z">
+  <suite name="Default suite" duration-ms="25580" started-at="2018-11-22T19:34:28Z" finished-at="2018-11-22T19:34:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26077" started-at="2018-11-22T12:12:42Z" finished-at="2018-11-22T12:13:08Z">
+    <test name="Default test" duration-ms="25580" started-at="2018-11-22T19:34:28Z" finished-at="2018-11-22T19:34:54Z">
       <class name="testcases.HappyFlowTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@27d415d9]" name="setup" is-config="true" duration-ms="2670" started-at="2018-11-22T12:12:42Z" finished-at="2018-11-22T12:12:45Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="setup" is-config="true" duration-ms="3222" started-at="2018-11-22T19:34:28Z" finished-at="2018-11-22T19:34:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="failedTest()[pri:1, instance:testcases.HappyFlowTest@27d415d9]" name="failedTest" duration-ms="3275" started-at="2018-11-22T12:12:45Z" finished-at="2018-11-22T12:12:48Z">
+        <test-method status="PASS" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@544fe44c]" name="completeFlowTest" duration-ms="10116" started-at="2018-11-22T19:34:32Z" finished-at="2018-11-22T19:34:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- completeFlowTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="teardown" is-config="true" duration-ms="3688" started-at="2018-11-22T19:34:42Z" finished-at="2018-11-22T19:34:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="setup" is-config="true" duration-ms="2252" started-at="2018-11-22T19:34:45Z" finished-at="2018-11-22T19:34:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@544fe44c]" name="missingInfoTest" duration-ms="2226" started-at="2018-11-22T19:34:48Z" finished-at="2018-11-22T19:34:50Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [personal-info] but found [career]]]>
@@ -24,7 +36,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:453)
 at org.testng.Assert.assertEquals(Assert.java:463)
-at testcases.HappyFlowTest.failedTest(HappyFlowTest.java:57)
+at testcases.HappyFlowTest.missingInfoTest(HappyFlowTest.java:57)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -55,20 +67,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- failedTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@27d415d9]" name="teardown" is-config="true" duration-ms="3924" started-at="2018-11-22T12:12:49Z" finished-at="2018-11-22T12:12:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@27d415d9]" name="setup" is-config="true" duration-ms="2011" started-at="2018-11-22T12:12:53Z" finished-at="2018-11-22T12:12:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="succesTest()[pri:1, instance:testcases.HappyFlowTest@27d415d9]" name="succesTest" duration-ms="10123" started-at="2018-11-22T12:12:55Z" finished-at="2018-11-22T12:13:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- succesTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@27d415d9]" name="teardown" is-config="true" duration-ms="3732" started-at="2018-11-22T12:13:05Z" finished-at="2018-11-22T12:13:08Z">
+        </test-method> <!-- missingInfoTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="teardown" is-config="true" duration-ms="3686" started-at="2018-11-22T19:34:50Z" finished-at="2018-11-22T19:34:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

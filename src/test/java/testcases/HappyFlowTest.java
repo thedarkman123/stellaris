@@ -11,10 +11,10 @@ import utilities.PropertiesWrapper;
 
 @Listeners(listeners.CustomListeners.class)
 
-public class HappyFlowTest extends BasicTest {
+public class HappyFlowTest extends BaseTest {
 
 	@Test(priority=1)
-	public void succesTest() {
+	public void completeFlowTest() {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
 		//step 1: Career step
@@ -39,8 +39,8 @@ public class HappyFlowTest extends BasicTest {
 	    Assert.assertEquals(titleOfLastScreen, or.getProp("titleOfLastScreen"));
 	}
 	
-	@Test(priority=1)
-	public void failedTest() {
+	@Test(priority=2)
+	public void missingInfoTest() {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
 		//step 1
@@ -51,7 +51,7 @@ public class HappyFlowTest extends BasicTest {
 		
 		//get this active page id
 	    String titleOfCurrentActivePanel = driverWrapper
-		.getElementByType("//div[@class='form-panel active']", "xpath", "located")
+		.getElementByType(or.getProp("currentActivePanelXpath"), "xpath", "located")
 		.getAttribute("id");
 	    
 	    Assert.assertEquals(titleOfCurrentActivePanel, "personal-info");
