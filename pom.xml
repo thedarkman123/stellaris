@@ -22,7 +22,6 @@
 		    <scope>test</scope>
 		</dependency>
 
-
 		<dependency>
 
 			<groupId>com.relevantcodes</groupId>

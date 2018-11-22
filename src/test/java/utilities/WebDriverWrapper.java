@@ -16,7 +16,7 @@ import org.testng.Assert;
 
 public class WebDriverWrapper {
 
-	WebDriver wb;
+	public WebDriver wb;
 
 	public void init(String browser) {
 		

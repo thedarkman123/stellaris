@@ -6,8 +6,8 @@
       <class name="testcases.HappyFlowTest">
         <methods>
           <include name="setup"/>
+          <include name="failedTest"/>
           <include name="teardown"/>
-          <include name="succesTest"/>
         </methods>
       </class> <!-- testcases.HappyFlowTest -->
     </classes>

@@ -10,7 +10,7 @@ import utilities.PropertiesWrapper;
 
 public class HappyFlowTest extends BasicTest {
 
-	@Test(priority=1)
+	@Test(priority=2)
 	public void succesTest() {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
@@ -36,8 +36,20 @@ public class HappyFlowTest extends BasicTest {
 	    Assert.assertEquals(titleOfLastScreen, or.getProp("titleOfLastScreen"));
 	}
 	
-//	@Test(priority=2)
-//	public void failedTest() {
-//		GenericPageObject.openUrl(or.getProp("webUrl"));
-//	}
+	@Test(priority=1)
+	public void failedTest() {
+		GenericPageObject.openUrl(or.getProp("webUrl"));
+		
+		//step 1
+		StellarApplication.openAndChooseOptionOccupation(1);
+
+		//step 2
+		StellarApplication.goToNextStep();
+		
+		//get this active page id
+	    String titleOfCurrentActivePanel = driverWrapper
+		.getElementByType("//div[@class='form-panel active']", "xpath", "located")
+		.getAttribute("id");
+	    Assert.assertEquals(titleOfCurrentActivePanel, "personal-info");
+	}
 }

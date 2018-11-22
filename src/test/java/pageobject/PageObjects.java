@@ -2,7 +2,9 @@ package pageobject;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class PageObjects  {
 
@@ -11,8 +13,8 @@ public class PageObjects  {
 		//step 1
 		public static void careerStep() {
 			enterCity(propertiesWrapper.getProp("cityToEnter"));
-			openAndChooseOptionOccupation();
-			openAndChooseUserStatus();
+			openAndChooseOptionOccupation(1);
+			openAndChooseUserStatus(1);
 			goToNextStep();
 		}
 		
@@ -33,10 +35,7 @@ public class PageObjects  {
 		
 		//step 4
 		public static void ourCommitmentStep() {
-			//just this one time, check for a different condition :)
-			driverWrapper
-			.getElementById(propertiesWrapper
-			.getProp("ourcommitmentsStepId"));
+			driverWrapper.getElementById(propertiesWrapper.getProp("ourcommitmentsStepId"));		
 			goToNextStep();
 		}
 		
@@ -46,7 +45,7 @@ public class PageObjects  {
 			clickSubmit();
 		}
 		
-		private static void checkAllCheckboxes() {
+		public static void checkAllCheckboxes() {
 			List<WebElement> els = driverWrapper
 			.getElements(propertiesWrapper
 			.getProp("checkboxesXpath"));
@@ -55,78 +54,63 @@ public class PageObjects  {
 			}
 		}
 		
-		private static void enterLinkedIn(String linkedIn) {
+		public static void enterLinkedIn(String linkedIn) {
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("linkInId"))
 			.sendKeys(linkedIn);
 		}
 		
-		private static void enterFirstName(String firstName) { //can be multiple possiblities here
+		public static void enterFirstName(String firstName) { //can be multiple possiblities here
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("userFirstNameId"))
 			.sendKeys(firstName);
 		}
 		
-		private static void enterLastName(String lastName) { //can be multiple possiblities here
+		public static void enterLastName(String lastName) { //can be multiple possiblities here
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("userLastNameId"))
 			.sendKeys(lastName);
 		}
 			
-		private static void enterPhone(String phone) { //can be multiple possiblities here
+		public static void enterPhone(String phone) { //can be multiple possiblities here
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("userPhoneNumberId"))
 			.sendKeys(phone);
 		}
 		
-		private static void enterEmail(String email) { //can be multiple possiblities here
+		public static void enterEmail(String email) { //can be multiple possiblities here
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("userEmailAddressInput"))
 			.sendKeys(email);
 		}
 		
-		private static void enterCity(String randTxt) { //can be multiple possiblities here
-			System.out.println(randTxt);
+		public static void enterCity(String randTxt) { //can be multiple possiblities here
 			driverWrapper
 			.getElementById(propertiesWrapper.getProp("cityNameInputId"))
 			.sendKeys(randTxt);
 		}
 		
-		private static void openAndChooseOptionOccupation() {
-			//action 1 = open the box
-			driverWrapper
-			.getElementByXpath(propertiesWrapper
-			.getProp("userOccupationXpath"))
-			.click();	
-			
-			//action 2 = choose the option
-			driverWrapper
-			.getElementByXpath(propertiesWrapper
-			.getProp("userOccupationOptionToChooseXpath"))
-			.click();			
+		public static void openAndChooseOptionOccupation(int optionNum) {
+		    Select s = new Select(driverWrapper
+		    		    .get_Element(By.xpath(propertiesWrapper
+						.getProp("userOccupationSelectXpath"))));
+			s.selectByIndex(optionNum);  
 		}
 		
-		private static void openAndChooseUserStatus() {
-			//action 1 = open the box
-			driverWrapper
-			.getElementByXpath(propertiesWrapper
-			.getProp("userStatusXpath"))
-			.click();	
-			
-			//action 2 = choose the option
-			driverWrapper
-			.getElementByXpath(propertiesWrapper
-			.getProp("userStatusOptionToChooseXpath"))
-			.click();	
+		public static void openAndChooseUserStatus(int optionNum) {	
+		    Select s = new Select(driverWrapper
+	    		    .get_Element(By.xpath(propertiesWrapper
+					.getProp("userStatusSelectXpath"))));
+			s.selectByIndex(optionNum);		
 		}
 		
-		private static void goToNextStep() { 
+		public static void goToNextStep() { 
 			driverWrapper.getElementByXpath(
 			propertiesWrapper.getProp("nextButtonXpath"))
 			.click();	
 		}
 		
-		private static void clickSubmit() { 
+		public static void clickSubmit() { 
 			driverWrapper.getElementByXpath(
 			propertiesWrapper.getProp("submitButtonXpath"))
 			.click();	
