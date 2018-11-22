@@ -8,25 +8,32 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
 public class WebDriverWrapper {
-
+	
 	public WebDriver wb = null;
 
-	public void init(String browser) {	
+	public void init(String browser) {
+//		DesiredCapabilities dr = DesiredCapabilities.chrome();
+//		capabilities.setCapability("overlappingCheckDisabled", true);
 		if (browser.equals("chrome")) {
 			//set a default one, no matter which one
 			System.setProperty("webdriver.chrome.driver", 
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\chromedriver.exe");
 			wb = new ChromeDriver();
 		} else if (browser.equals("firefox")) {
+			//disable the overlapping errors
+			FirefoxOptions capabilities = new FirefoxOptions();
+			capabilities.setCapability("overlappingCheckDisabled", true);
 			System.setProperty("webdriver.gecko.driver", 
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\geckodriver.exe");
-			wb = new FirefoxDriver(); 
+			wb = new FirefoxDriver(capabilities); 
 		}
 	}
 
