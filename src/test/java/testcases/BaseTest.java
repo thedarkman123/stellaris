@@ -3,27 +3,34 @@ package testcases;
 import org.apache.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import pageobject.GenericPageObject;
 import utilities.PropertiesWrapper;
 import utilities.WebDriverWrapper;
 
 public class BaseTest {
-	public static WebDriverWrapper driverWrapper;
-	public static Logger log = Logger.getLogger("appLogger");
+	protected static WebDriverWrapper driverWrapper;
 	
-	PropertiesWrapper config,or;
+	protected PropertiesWrapper or; //object repository
+	
+	protected static String browserInfo;
 
+	public static WebDriverWrapper getWrapperInstance() {
+		return driverWrapper;
+	}
 	//initializations goes here
 	@BeforeMethod
-	public void setup() {
+	@Parameters("browser")
+	public void setup(String browser) {
+		//set it here for later use if needed
+		browserInfo = browser;
 		//a wrapper for properties
-		config = new PropertiesWrapper("Config");
 		or = new PropertiesWrapper("OR");
 		//a wrapper for the webdriver
 		driverWrapper = new WebDriverWrapper();
 		//here we can add the propery for the browser we initiate the test OR using annotation
-		driverWrapper.init(config.getProp("browser")); 
+		driverWrapper.init(browser); 
 
 		GenericPageObject.setWebDriver(driverWrapper);
 		GenericPageObject.setPropertiesDriver(or);//the only needed properties file
@@ -38,7 +45,6 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		//do everything related to closing and removing stuff here
-		driverWrapper.quit(); //close the browser
-		
+		driverWrapper.quit(); //close the browser		
 	}
 }

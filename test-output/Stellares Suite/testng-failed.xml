@@ -6,16 +6,28 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="HappyFlowTest(failed)">
+  <test thread-count="5" name="HappyFlowChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="testcases.HappyFlowTest">
         <methods>
-          <include name="setup"/>
-          <include name="failedTest"/>
           <include name="teardown"/>
-          <include name="succesTest"/>
+          <include name="setup"/>
+          <include name="missingInfoTest"/>
         </methods>
       </class> <!-- testcases.HappyFlowTest -->
     </classes>
-  </test> <!-- HappyFlowTest(failed) -->
+  </test> <!-- HappyFlowChromeTest(failed) -->
+  <test thread-count="5" name="HappyFlowFirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testcases.HappyFlowTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="missingInfoTest"/>
+        </methods>
+      </class> <!-- testcases.HappyFlowTest -->
+    </classes>
+  </test> <!-- HappyFlowFirefoxTest(failed) -->
 </suite> <!-- Failed suite [Stellares Suite] -->

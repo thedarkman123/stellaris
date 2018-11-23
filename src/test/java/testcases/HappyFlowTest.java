@@ -1,15 +1,10 @@
 package testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pageobject.GenericPageObject;
-import pageobject.PageObjects;
 import pageobject.PageObjects.StellarApplication;
-import utilities.PropertiesWrapper;
-
-@Listeners(listeners.CustomListeners.class)
 
 public class HappyFlowTest extends BaseTest {
 
@@ -44,7 +39,7 @@ public class HappyFlowTest extends BaseTest {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
 		//step 1
-		StellarApplication.openAndChooseOptionOccupation(1);
+		StellarApplication.openAndChooseOptionOccupationByIndex(1);
 
 		//step 2
 		StellarApplication.goToNextStep();

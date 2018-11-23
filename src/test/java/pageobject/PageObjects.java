@@ -13,8 +13,8 @@ public class PageObjects  {
 		//step 1
 		public static void careerStep() {
 			enterCity(propertiesWrapper.getProp("cityToEnter"));
-			openAndChooseOptionOccupation(1);
-			openAndChooseUserStatus(1);
+			openAndChooseOptionOccupationByIndex(1);
+			openAndChooseUserStatusByIndex(1);
 			goToNextStep();
 		}
 		
@@ -94,26 +94,31 @@ public class PageObjects  {
 		}
 		
 		//Career functions
-		public static void openAndChooseOptionOccupation(int optionNum) {
+		public static void openAndChooseOptionOccupationByIndex(int optionNum) {
 			//This is because of firefox
+			String optionToChooseXpath = propertiesWrapper.getProp("userOccupationSpecificXpath")
+			.replace("1", Integer.toString(optionNum));
 			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationId"),"id","presence")
 			.click();
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationSpecificXpath"), "xpath","visible")
-			.click();
-			
+			driverWrapper.getElementByType(
+			optionToChooseXpath,"xpath","visible")
+			.click();			
 //		    Select s = new Select(driverWrapper
 //		    		    .get_Element(By.xpath(propertiesWrapper
 //						.getProp("userOccupationSelectXpath"))));
 //			s.selectByIndex(optionNum);  
 		}
 		
-		public static void openAndChooseUserStatus(int optionNum) {
+		public static void openAndChooseUserStatusByIndex(int optionNum) {
 			//This is because of firefox
+			String optionToChooseXpath = propertiesWrapper.getProp("userStatusSpecificXpath")
+					.replace("1", Integer.toString(optionNum));
 			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusId"),"id","presence")
 			.click();
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusSpecificXpath"),"xpath","visible")
-			.click();
-			
+			driverWrapper.getElementByType(
+			optionToChooseXpath
+			,"xpath","visible")
+			.click();			
 //		    Select s = new Select(driverWrapper
 //	    		    .get_Element(By.xpath(propertiesWrapper
 //					.getProp("userStatusSelectXpath"))));

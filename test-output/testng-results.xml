@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="2" ignored="0" total="4" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27327" started-at="2018-11-22T20:41:27Z" finished-at="2018-11-22T20:41:54Z">
+  <suite name="Stellares Suite" duration-ms="55648" started-at="2018-11-23T08:02:01Z" finished-at="2018-11-23T08:02:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27327" started-at="2018-11-22T20:41:27Z" finished-at="2018-11-22T20:41:54Z">
+    <test name="HappyFlowChromeTest" duration-ms="26701" started-at="2018-11-23T08:02:01Z" finished-at="2018-11-23T08:02:28Z">
       <class name="testcases.HappyFlowTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="setup" is-config="true" duration-ms="3491" started-at="2018-11-22T20:41:27Z" finished-at="2018-11-22T20:41:31Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@1efed156]" name="setup" is-config="true" duration-ms="3335" started-at="2018-11-23T08:02:01Z" finished-at="2018-11-23T08:02:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@544fe44c]" name="completeFlowTest" duration-ms="10413" started-at="2018-11-22T20:41:31Z" finished-at="2018-11-22T20:41:41Z">
+        <test-method status="PASS" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@1efed156]" name="completeFlowTest" duration-ms="10409" started-at="2018-11-23T08:02:05Z" finished-at="2018-11-23T08:02:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- completeFlowTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="teardown" is-config="true" duration-ms="4350" started-at="2018-11-22T20:41:41Z" finished-at="2018-11-22T20:41:45Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@1efed156]" name="teardown" is-config="true" duration-ms="3641" started-at="2018-11-23T08:02:15Z" finished-at="2018-11-23T08:02:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="setup" is-config="true" duration-ms="2435" started-at="2018-11-22T20:41:45Z" finished-at="2018-11-22T20:41:48Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@1efed156]" name="setup" is-config="true" duration-ms="2436" started-at="2018-11-23T08:02:19Z" finished-at="2018-11-23T08:02:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@544fe44c]" name="missingInfoTest" duration-ms="2668" started-at="2018-11-22T20:41:48Z" finished-at="2018-11-22T20:41:50Z">
+        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@1efed156]" name="missingInfoTest" duration-ms="2913" started-at="2018-11-23T08:02:21Z" finished-at="2018-11-23T08:02:24Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [personal-info] but found [career]]]>
@@ -36,7 +50,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:453)
 at org.testng.Assert.assertEquals(Assert.java:463)
-at testcases.HappyFlowTest.missingInfoTest(HappyFlowTest.java:57)
+at testcases.HappyFlowTest.missingInfoTest(HappyFlowTest.java:52)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -68,11 +82,94 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- missingInfoTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@544fe44c]" name="teardown" is-config="true" duration-ms="3657" started-at="2018-11-22T20:41:51Z" finished-at="2018-11-22T20:41:54Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@1efed156]" name="teardown" is-config="true" duration-ms="3634" started-at="2018-11-23T08:02:24Z" finished-at="2018-11-23T08:02:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- testcases.HappyFlowTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- HappyFlowChromeTest -->
+    <test name="HappyFlowFirefoxTest" duration-ms="28878" started-at="2018-11-23T08:02:28Z" finished-at="2018-11-23T08:02:57Z">
+      <class name="testcases.HappyFlowTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@5a1c0542]" name="setup" is-config="true" duration-ms="3690" started-at="2018-11-23T08:02:28Z" finished-at="2018-11-23T08:02:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@5a1c0542]" name="completeFlowTest" duration-ms="10315" started-at="2018-11-23T08:02:32Z" finished-at="2018-11-23T08:02:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- completeFlowTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@5a1c0542]" name="teardown" is-config="true" duration-ms="3939" started-at="2018-11-23T08:02:42Z" finished-at="2018-11-23T08:02:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@5a1c0542]" name="setup" is-config="true" duration-ms="3113" started-at="2018-11-23T08:02:46Z" finished-at="2018-11-23T08:02:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@5a1c0542]" name="missingInfoTest" duration-ms="3489" started-at="2018-11-23T08:02:49Z" finished-at="2018-11-23T08:02:52Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [personal-info] but found [career]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [personal-info] but found [career]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at testcases.HappyFlowTest.missingInfoTest(HappyFlowTest.java:52)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- missingInfoTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@5a1c0542]" name="teardown" is-config="true" duration-ms="3900" started-at="2018-11-23T08:02:53Z" finished-at="2018-11-23T08:02:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testcases.HappyFlowTest -->
+    </test> <!-- HappyFlowFirefoxTest -->
+  </suite> <!-- Stellares Suite -->
 </testng-results>

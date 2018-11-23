@@ -6,6 +6,7 @@
       <class name="testcases.HappyFlowTest">
         <methods>
           <include name="teardown"/>
+          <include name="completeFlowTest"/>
           <include name="setup"/>
           <include name="missingInfoTest"/>
         </methods>

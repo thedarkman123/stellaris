@@ -13,9 +13,9 @@ import testcases.BaseTest;
 public class TestUtils extends BaseTest {
 	
 	public static void captureScreenshot(String methodName) {
-		File scrFile = ((TakesScreenshot)driverWrapper.wb).getScreenshotAs(OutputType.FILE);
+		File scrFile = ((TakesScreenshot)driverWrapper.getWbInstance()).getScreenshotAs(OutputType.FILE);
 		try {
-			Files.copy(scrFile, new File(System.getProperty("user.dir") + "\\test-output\\html\\"+ methodName + ".png"));
+			Files.copy(scrFile, new File(System.getProperty("user.dir") + "\\test-output\\html\\"+ browserInfo + methodName + "fail.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -17,7 +17,11 @@ import org.testng.Assert;
 
 public class WebDriverWrapper {
 	
-	public WebDriver wb = null;
+	private WebDriver wb = null;
+	
+	public WebDriver getWbInstance() {
+		return this.wb;
+	}
 
 	public void init(String browser) {
 //		DesiredCapabilities dr = DesiredCapabilities.chrome();
@@ -28,12 +32,9 @@ public class WebDriverWrapper {
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\chromedriver.exe");
 			wb = new ChromeDriver();
 		} else if (browser.equals("firefox")) {
-			//disable the overlapping errors
-			FirefoxOptions capabilities = new FirefoxOptions();
-			capabilities.setCapability("overlappingCheckDisabled", true);
 			System.setProperty("webdriver.gecko.driver", 
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\geckodriver.exe");
-			wb = new FirefoxDriver(capabilities); 
+			wb = new FirefoxDriver(); 
 		}
 	}
 
@@ -111,7 +112,6 @@ public class WebDriverWrapper {
 			return element;
 		} else
 			return null;
-
 	}
 	
 	public WebElement getElementById(String id) {
