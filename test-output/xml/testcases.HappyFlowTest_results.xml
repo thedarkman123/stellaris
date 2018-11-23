@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="12.097">
+           time="12.451">
   <properties />
-            <testcase name="missingInfoTest" time="3.081" classname="testcases.HappyFlowTest">
+            <testcase name="missingInfoTest" time="3.450" classname="testcases.HappyFlowTest">
                 <failure type="java.lang.AssertionError"
                   message="expected [personal-info] but found [career]"
               >
@@ -49,6 +49,6 @@
           </testcase>
   
   
-            <testcase name="completeFlowTest" time="9.016" classname="testcases.HappyFlowTest" />
+            <testcase name="completeFlowTest" time="9.001" classname="testcases.HappyFlowTest" />
       
 </testsuite>

@@ -38,7 +38,7 @@ public class PageObjects  {
 		
 		//step 4
 		public static void ourCommitmentStep() {
-			driverWrapper.getElementById(propertiesWrapper.getProp("ourcommitmentsStepId"));		
+			driverWrapper.getVisibleElementById(propertiesWrapper.getProp("ourcommitmentsStepId"));		
 			goToNextStep();
 		}
 		
@@ -61,38 +61,38 @@ public class PageObjects  {
 		//About you functions
 		public static void enterLinkedIn(String linkedIn) {
 			driverWrapper
-			.getElementById(propertiesWrapper.getProp("linkInId"))
+			.getVisibleElementById(propertiesWrapper.getProp("linkInId"))
 			.sendKeys(linkedIn);
 		}
 		
 		//Personal information functions
 		public static void enterFirstName(String firstName) { //can be multiple possiblities here
 			driverWrapper
-			.getElementById(propertiesWrapper.getProp("userFirstNameId"))
+			.getVisibleElementById(propertiesWrapper.getProp("userFirstNameId"))
 			.sendKeys(firstName);
 		}
 		
 		public static void enterLastName(String lastName) { //can be multiple possiblities here
 			driverWrapper
-			.getElementById(propertiesWrapper.getProp("userLastNameId"))
+			.getVisibleElementById(propertiesWrapper.getProp("userLastNameId"))
 			.sendKeys(lastName);
 		}
 			
 		public static void enterPhone(String phone) { //can be multiple possiblities here
 			driverWrapper
-			.getElementById(propertiesWrapper.getProp("userPhoneNumberId"))
+			.getVisibleElementById(propertiesWrapper.getProp("userPhoneNumberId"))
 			.sendKeys(phone);
 		}
 		
 		public static void enterEmail(String email) { //can be multiple possiblities here
 			driverWrapper
-			.getElementById(propertiesWrapper.getProp("userEmailAddressInput"))
+			.getVisibleElementById(propertiesWrapper.getProp("userEmailAddressInput"))
 			.sendKeys(email);
 		}
 		
 		public static void enterCity(String randTxt) { //can be multiple possiblities here
 			driverWrapper
-			.getElementById(propertiesWrapper.getProp("cityNameInputId"))
+			.getVisibleElementById(propertiesWrapper.getProp("cityNameInputId"))
 			.sendKeys(randTxt);
 		}
 		
@@ -134,14 +134,14 @@ public class PageObjects  {
 		
 		//General functions
 		public static void goToNextStep() { 
-			driverWrapper.getElementByXpath(
+			driverWrapper.getVisibleElementByXpath(
 			propertiesWrapper.getProp("nextButtonXpath"))
 			.click();	
 		}
 		
 		
 		public static void clickSubmit() { 
-			driverWrapper.getElementByXpath(
+			driverWrapper.getVisibleElementByXpath(
 			propertiesWrapper.getProp("submitButtonXpath"))
 			.click();	
 		}

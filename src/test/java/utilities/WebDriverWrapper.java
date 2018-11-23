@@ -35,13 +35,12 @@ public class WebDriverWrapper {
 	}
 	
 	public String getVersion() {
-		Capabilities cap = ((RemoteWebDriver) this.wb).getCapabilities();
+		Capabilities cap = ((RemoteWebDriver)wb).getCapabilities();
 		return cap.getVersion().toString();
 	}
 
 	public void init(String browser) {
 		if (browser.equals("chrome")) {
-			//set a default one, no matter which one
 			System.setProperty("webdriver.chrome.driver", 
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\chromedriver.exe");
 			wb = new ChromeDriver();
@@ -80,7 +79,6 @@ public class WebDriverWrapper {
 
 		try {
 			WebDriverWait driverWait = new WebDriverWait(wb, 20, 1000);
-			//default
 			if (condition == CONDITIONTYPE.PRESENT) {
 				element = driverWait.until(ExpectedConditions.presenceOfElementLocated(by));	
 			} else if (condition == CONDITIONTYPE.CLICKABLE) {
@@ -89,10 +87,7 @@ public class WebDriverWrapper {
 				element = driverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			}
 
-		} catch (TimeoutException e) {
-			System.out.println("");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -137,11 +132,11 @@ public class WebDriverWrapper {
 			return null;
 	}
 	
-	public WebElement getElementById(String id) {
+	public WebElement getVisibleElementById(String id) {
 		return getElementByType(id,FINDTYPE.ID,CONDITIONTYPE.VISIBLE);
 	}
 	
-	public WebElement getElementByXpath(String xpath) {
+	public WebElement getVisibleElementByXpath(String xpath) {
 		return getElementByType(xpath,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE);
 	}
 
