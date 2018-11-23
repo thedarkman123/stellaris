@@ -49,6 +49,6 @@ public class HappyFlowTest extends BaseTest {
 		.getElementByType(or.getProp("currentActivePanelXpath"), "xpath", "located")
 		.getAttribute("id");
 	    
-	    Assert.assertEquals(titleOfCurrentActivePanel, "personal-info");
+	    Assert.assertEquals(titleOfCurrentActivePanel, or.getProp("titleOfPersonalInfoPanel"));
 	}
 }

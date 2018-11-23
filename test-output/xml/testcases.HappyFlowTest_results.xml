@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HappyFlowFirefoxTest"
+<testsuite name="HappyFlowChromeTest"
            tests="2"
            failures="1"
            errors="0"
            skipped="0"
-           time="13.804">
+           time="14.068">
   <properties />
-            <testcase name="missingInfoTest" time="3.489" classname="testcases.HappyFlowTest">
+            <testcase name="missingInfoTest" time="2.833" classname="testcases.HappyFlowTest">
                 <failure type="java.lang.AssertionError"
                   message="expected [personal-info] but found [career]"
               >
@@ -49,6 +49,6 @@
           </testcase>
   
   
-            <testcase name="completeFlowTest" time="10.315" classname="testcases.HappyFlowTest" />
+            <testcase name="completeFlowTest" time="11.235" classname="testcases.HappyFlowTest" />
       
 </testsuite>

@@ -1,13 +1,10 @@
 package listeners;
 
-import java.util.Arrays;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import utilities.TestUtils;
-
 
 public class CustomListeners implements ITestListener {
 
@@ -29,8 +26,7 @@ public class CustomListeners implements ITestListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {

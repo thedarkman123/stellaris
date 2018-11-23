@@ -1,6 +1,5 @@
 package testcases;
 
-import org.apache.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -11,9 +10,7 @@ import utilities.WebDriverWrapper;
 
 public class BaseTest {
 	protected static WebDriverWrapper driverWrapper;
-	
 	protected PropertiesWrapper or; //object repository
-	
 	protected static String browserInfo;
 
 	public static WebDriverWrapper getWrapperInstance() {
@@ -38,12 +35,6 @@ public class BaseTest {
 	
 	@AfterMethod
 	public void teardown() {
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		//do everything related to closing and removing stuff here
 		driverWrapper.quit(); //close the browser		
 	}
