@@ -4,6 +4,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import testcases.BaseTest;
 import utilities.TestUtils;
 
 public class CustomListeners implements ITestListener {
@@ -22,7 +23,8 @@ public class CustomListeners implements ITestListener {
 		//usually should be logged, but no need for that, so only console printing
 		System.out.println(result.getName() + " failed: ");
 		System.out.println(result.getThrowable().getMessage().toString());
-        TestUtils.captureScreenshot(result.getName());
+		String screenShotFileName = BaseTest.getWrapperInstance().getBrowserName() + result.getName();
+		TestUtils.captureScreenshot(screenShotFileName);
 	}
 
 	public void onTestSkipped(ITestResult result) {

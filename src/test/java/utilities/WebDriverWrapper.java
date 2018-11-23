@@ -1,8 +1,8 @@
 package utilities;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -22,10 +23,23 @@ public class WebDriverWrapper {
 	public WebDriver getWbInstance() {
 		return this.wb;
 	}
+	
+	public String getBrowserName() {
+	    Capabilities cap = ((RemoteWebDriver) this.wb).getCapabilities();
+	    return cap.getBrowserName().toLowerCase();
+	}
+	
+	public String getPlatform() {
+		Capabilities cap = ((RemoteWebDriver) this.wb).getCapabilities();
+		return cap.getPlatform().toString();
+	}
+	
+	public String getVersion() {
+		Capabilities cap = ((RemoteWebDriver) this.wb).getCapabilities();
+		return cap.getVersion().toString();
+	}
 
 	public void init(String browser) {
-//		DesiredCapabilities dr = DesiredCapabilities.chrome();
-//		capabilities.setCapability("overlappingCheckDisabled", true);
 		if (browser.equals("chrome")) {
 			//set a default one, no matter which one
 			System.setProperty("webdriver.chrome.driver", 
@@ -41,28 +55,37 @@ public class WebDriverWrapper {
 	public void openUrl(String url) {
 		wb.get(url);
 	}
+	
+	public static enum FINDTYPE{
+		XPATH,ID,TAG
+	}
+	
+	public static enum CONDITIONTYPE{
+		VISIBLE,CLICKABLE,PRESENT
+	}
 
 	//explicit wait find
-	public WebElement getElementByType(String value, String type, String condition) {
+	public WebElement getElementByType(String value, FINDTYPE type, CONDITIONTYPE condition) {
 		WebElement element = null;
 
 		By by = null;
 
-		if (type.equals("xpath")) {
+		if (type == FINDTYPE.XPATH) {
 			by = By.xpath(value);
-		} else if (type.equals("id")) {
+		} else if (type == FINDTYPE.ID) {
 			by = By.id(value);
-		} else if(type.equals("tagName")) {
+		} else if(type == FINDTYPE.TAG) {
 			by = By.tagName(value);
 		}
 
 		try {
 			WebDriverWait driverWait = new WebDriverWait(wb, 20, 1000);
 			//default
-			element = driverWait.until(ExpectedConditions.presenceOfElementLocated(by));
-			if (condition.equals("clickable")) {
+			if (condition == CONDITIONTYPE.PRESENT) {
+				element = driverWait.until(ExpectedConditions.presenceOfElementLocated(by));	
+			} else if (condition == CONDITIONTYPE.CLICKABLE) {
 				element = driverWait.until(ExpectedConditions.elementToBeClickable(by));
-			} else if (condition.equals("visible")) {
+			} else if (condition == CONDITIONTYPE.VISIBLE) {
 				element = driverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			}
 
@@ -115,11 +138,11 @@ public class WebDriverWrapper {
 	}
 	
 	public WebElement getElementById(String id) {
-		return getElementByType(id,"id","visible");
+		return getElementByType(id,FINDTYPE.ID,CONDITIONTYPE.VISIBLE);
 	}
 	
 	public WebElement getElementByXpath(String xpath) {
-		return getElementByType(xpath,"xpath","visible");
+		return getElementByType(xpath,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE);
 	}
 
 	public void quit() {

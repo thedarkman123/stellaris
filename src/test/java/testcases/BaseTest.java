@@ -11,7 +11,6 @@ import utilities.WebDriverWrapper;
 public class BaseTest {
 	protected static WebDriverWrapper driverWrapper;
 	protected PropertiesWrapper or; //object repository
-	protected static String browserInfo;
 
 	public static WebDriverWrapper getWrapperInstance() {
 		return driverWrapper;
@@ -20,8 +19,6 @@ public class BaseTest {
 	@BeforeMethod
 	@Parameters("browser")
 	public void setup(String browser) {
-		//set it here for later use if needed
-		browserInfo = browser;
 		//a wrapper for properties
 		or = new PropertiesWrapper("OR");
 		//a wrapper for the webdriver

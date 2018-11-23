@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.WebDriverWrapper.CONDITIONTYPE;
+import utilities.WebDriverWrapper.FINDTYPE;
+
 public class PageObjects  {
 
 	public static class StellarApplication extends GenericPageObject{
@@ -98,10 +101,12 @@ public class PageObjects  {
 			//This is because of firefox
 			String optionToChooseXpath = propertiesWrapper.getProp("userOccupationSpecificXpath")
 			.replace("1", Integer.toString(optionNum));
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationId"),"id","presence")
+			
+			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationId"),FINDTYPE.ID,CONDITIONTYPE.PRESENT)
 			.click();
+			
 			driverWrapper.getElementByType(
-			optionToChooseXpath,"xpath","visible")
+			optionToChooseXpath,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE)
 			.click();			
 //		    Select s = new Select(driverWrapper
 //		    		    .get_Element(By.xpath(propertiesWrapper
@@ -113,11 +118,13 @@ public class PageObjects  {
 			//This is because of firefox
 			String optionToChooseXpath = propertiesWrapper.getProp("userStatusSpecificXpath")
 					.replace("1", Integer.toString(optionNum));
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusId"),"id","presence")
+			
+			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusId"),FINDTYPE.ID,CONDITIONTYPE.PRESENT)
 			.click();
+			
 			driverWrapper.getElementByType(
 			optionToChooseXpath
-			,"xpath","visible")
+			,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE)
 			.click();			
 //		    Select s = new Select(driverWrapper
 //	    		    .get_Element(By.xpath(propertiesWrapper

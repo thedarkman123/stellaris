@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 
 import pageobject.GenericPageObject;
 import pageobject.PageObjects.StellarApplication;
+import utilities.WebDriverWrapper.CONDITIONTYPE;
+import utilities.WebDriverWrapper.FINDTYPE;
 
 public class HappyFlowTest extends BaseTest {
 
@@ -29,7 +31,7 @@ public class HappyFlowTest extends BaseTest {
 	    
 	    //The assert
 	    String titleOfLastScreen = driverWrapper
-	    		.getElementByType("h2", "tagName", "visible")
+	    		.getElementByType("h2",FINDTYPE.TAG,CONDITIONTYPE.VISIBLE)
 	    		.getText();
 	    Assert.assertEquals(titleOfLastScreen, or.getProp("titleOfLastScreen"));
 	}
@@ -46,7 +48,7 @@ public class HappyFlowTest extends BaseTest {
 		
 		//get this active page id
 	    String titleOfCurrentActivePanel = driverWrapper
-		.getElementByType(or.getProp("currentActivePanelXpath"), "xpath", "located")
+		.getElementByType(or.getProp("currentActivePanelXpath"),FINDTYPE.XPATH,CONDITIONTYPE.PRESENT)
 		.getAttribute("id");
 	    
 	    Assert.assertEquals(titleOfCurrentActivePanel, or.getProp("titleOfPersonalInfoPanel"));

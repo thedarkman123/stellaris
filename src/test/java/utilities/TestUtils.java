@@ -12,8 +12,7 @@ import testcases.BaseTest;
 
 public class TestUtils extends BaseTest {
 	
-	public static void captureScreenshot(String methodName) {
-		String fileName = browserInfo + methodName; //here i can construct a name for screenshot
+	public static void captureScreenshot(String fileName) {
 		File scrFile = ((TakesScreenshot)driverWrapper.getWbInstance()).getScreenshotAs(OutputType.FILE);
 		try {
 			Files.copy(scrFile, new File(System.getProperty("user.dir") + "\\test-output\\html\\"+ fileName + ".png"));
