@@ -41,14 +41,13 @@ public class HappyFlowTest extends BaseTest {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
 		//step 1
-		StellarApplication.openAndChooseOptionOccupationByIndex(1);
+		StellarApplication.chooseOptionOccupationByIndex(1);
 
 		//step 2
 		StellarApplication.goToNextStep();
 		
 		//get this active page id
-	    String titleOfCurrentActivePanel = driverWrapper
-		.getElementByType(or.getProp("currentActivePanelXpath"),FINDTYPE.XPATH,CONDITIONTYPE.PRESENT)
+	    String titleOfCurrentActivePanel = driverWrapper.getElementByType(or.getProp("currentActivePanelXpath"),FINDTYPE.XPATH,CONDITIONTYPE.PRESENT)
 		.getAttribute("id");
 	    
 	    Assert.assertEquals(titleOfCurrentActivePanel, or.getProp("titleOfPersonalInfoPanel"));

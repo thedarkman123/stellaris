@@ -16,8 +16,8 @@ public class PageObjects  {
 		//step 1
 		public static void careerStep() {
 			enterCity(propertiesWrapper.getProp("cityToEnter"));
-			openAndChooseOptionOccupationByIndex(1);
-			openAndChooseUserStatusByIndex(1);
+			chooseOptionOccupationByIndex(1);
+			chooseUserStatusByIndex(1);
 			goToNextStep();
 		}
 		
@@ -97,35 +97,22 @@ public class PageObjects  {
 		}
 		
 		//Career functions
-		public static void openAndChooseOptionOccupationByIndex(int optionNum) {
-			//This is because of firefox
-			String optionToChooseXpath = propertiesWrapper.getProp("userOccupationSpecificXpath")
-			.replace("1", Integer.toString(optionNum));
-			
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userOccupationId"),FINDTYPE.ID,CONDITIONTYPE.PRESENT)
-			.click();
-			
-			driverWrapper.getElementByType(
-			optionToChooseXpath,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE)
-			.click();			
+		public static void chooseOptionOccupationByIndex(int optionNum) {			
+			driverWrapper.get_Element(By.id(propertiesWrapper.getProp("userOccupationId"))).click();
+			List<WebElement> wbs = driverWrapper.get_Elements(By.xpath(propertiesWrapper.getProp("userOccupationSpecificXpath")));
+			wbs.get(optionNum).click();		
+			//not working in my firefox versions
 //		    Select s = new Select(driverWrapper
 //		    		    .get_Element(By.xpath(propertiesWrapper
 //						.getProp("userOccupationSelectXpath"))));
 //			s.selectByIndex(optionNum);  
 		}
 		
-		public static void openAndChooseUserStatusByIndex(int optionNum) {
+		public static void chooseUserStatusByIndex(int optionNum) {
 			//This is because of firefox
-			String optionToChooseXpath = propertiesWrapper.getProp("userStatusSpecificXpath")
-					.replace("1", Integer.toString(optionNum));
-			
-			driverWrapper.getElementByType(propertiesWrapper.getProp("userStatusId"),FINDTYPE.ID,CONDITIONTYPE.PRESENT)
-			.click();
-			
-			driverWrapper.getElementByType(
-			optionToChooseXpath
-			,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE)
-			.click();			
+			driverWrapper.get_Element(By.id(propertiesWrapper.getProp("userStatusId"))).click();
+			List<WebElement> wbs = driverWrapper.get_Elements(By.xpath(propertiesWrapper.getProp("userStatusSpecificXpath")));
+			wbs.get(optionNum).click();			
 //		    Select s = new Select(driverWrapper
 //	    		    .get_Element(By.xpath(propertiesWrapper
 //					.getProp("userStatusSelectXpath"))));

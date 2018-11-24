@@ -121,15 +121,14 @@ public class WebDriverWrapper {
 		return elements;
 	}
 
-
+	public List<WebElement> get_Elements(By by) {
+		List<WebElement> elements = wb.findElements(by);
+		return (elements != null) ? elements : null ;
+	}
 	//simple find
 	public WebElement get_Element(By by) {
 		WebElement element = wb.findElement(by);
-
-		if (element != null) {
-			return element;
-		} else
-			return null;
+		return (element != null) ? element : null ;
 	}
 	
 	public WebElement getVisibleElementById(String id) {
