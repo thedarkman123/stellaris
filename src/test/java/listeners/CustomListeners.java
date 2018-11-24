@@ -21,10 +21,11 @@ public class CustomListeners implements ITestListener {
 
 	public void onTestFailure(ITestResult result) {
 		//usually should be logged, but no need for that, so only console printing
-		System.out.println(result.getName() + " failed: ");
+		System.out.print(result.getName() + " failed: ");
 		System.out.println(result.getThrowable().getMessage().toString());
-		String screenShotFileName = BaseTest.getWrapperInstance().getBrowserName() + result.getName();
-		TestUtils.captureScreenshot(screenShotFileName);
+		String fileName = result.getName();
+		String browserName = TestUtils.getWrapperInstance().getBrowserName();
+		TestUtils.captureScreenshot(fileName,browserName);
 	}
 
 	public void onTestSkipped(ITestResult result) {

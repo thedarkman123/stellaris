@@ -12,9 +12,6 @@ public class BaseTest {
 	protected static WebDriverWrapper driverWrapper;
 	protected PropertiesWrapper or; //object repository
 
-	public static WebDriverWrapper getWrapperInstance() {
-		return driverWrapper;
-	}
 	//initializations goes here
 	@BeforeMethod
 	@Parameters("browser")

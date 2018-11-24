@@ -11,14 +11,19 @@ import com.google.common.io.Files;
 import testcases.BaseTest;
 
 public class TestUtils extends BaseTest {
-	
-	public static void captureScreenshot(String fileName) {
-		File scrFile = ((TakesScreenshot)driverWrapper.getWbInstance()).getScreenshotAs(OutputType.FILE);
+	public static void captureScreenshot(String fileName,String directory) {
+		String pathToFile = System.getProperty("user.dir") + "\\test-output\\html\\" + directory +"\\"+ fileName + ".png";
 		try {
-			Files.copy(scrFile, new File(System.getProperty("user.dir") + "\\test-output\\html\\"+ fileName + ".png"));
+			File scrFile = ((TakesScreenshot)getWrapperInstance().getWbInstance()).getScreenshotAs(OutputType.FILE);
+			File newFileToCreate = new File(pathToFile);	
+			newFileToCreate.getParentFile().mkdirs();
+			Files.copy(scrFile, newFileToCreate);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static WebDriverWrapper getWrapperInstance() {
+		return driverWrapper;
 	}
 }
