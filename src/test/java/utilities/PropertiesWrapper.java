@@ -15,10 +15,6 @@ public class PropertiesWrapper {
 			fis = fis.replace("%%FILENAME%%", fileName);
 			try {
 				properties.load(new FileInputStream(fis));
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				System.out.println("File not exist");
-				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				System.out.println("Error with file input/output");

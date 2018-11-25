@@ -16,7 +16,7 @@ public class BaseTest {
 	@BeforeMethod
 	@Parameters("browser")
 	public void setup(String browser) {
-		//a wrapper for properties
+		//a wrapper for properties, or stands for OBJECT REPOSITORY 
 		or = new PropertiesWrapper("OR");
 		//a wrapper for the webdriver
 		driverWrapper = new WebDriverWrapper();
@@ -24,7 +24,7 @@ public class BaseTest {
 		driverWrapper.init(browser); 
 
 		GenericPageObject.setWebDriver(driverWrapper);
-		GenericPageObject.setPropertiesDriver(or);//the only needed properties file
+		GenericPageObject.setProperties(or);//the only needed properties file
 	}
 	
 	@AfterMethod

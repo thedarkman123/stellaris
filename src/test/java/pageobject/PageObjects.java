@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.TestUtils;
 import utilities.WebDriverWrapper.CONDITIONTYPE;
 import utilities.WebDriverWrapper.FINDTYPE;
 
@@ -15,7 +16,7 @@ public class PageObjects  {
 		
 		//step 1
 		public static void careerStep() {
-			enterCity(propertiesWrapper.getProp("cityToEnter"));
+			enterCity(TestUtils.generateString(8));
 			chooseOptionOccupationByIndex(1);
 			chooseUserStatusByIndex(1);
 			goToNextStep();
@@ -66,31 +67,31 @@ public class PageObjects  {
 		}
 		
 		//Personal information functions
-		public static void enterFirstName(String firstName) { //can be multiple possiblities here
+		public static void enterFirstName(String firstName) { 
 			driverWrapper
 			.getVisibleElementById(propertiesWrapper.getProp("userFirstNameId"))
 			.sendKeys(firstName);
 		}
 		
-		public static void enterLastName(String lastName) { //can be multiple possiblities here
+		public static void enterLastName(String lastName) { 
 			driverWrapper
 			.getVisibleElementById(propertiesWrapper.getProp("userLastNameId"))
 			.sendKeys(lastName);
 		}
 			
-		public static void enterPhone(String phone) { //can be multiple possiblities here
+		public static void enterPhone(String phone) { 
 			driverWrapper
 			.getVisibleElementById(propertiesWrapper.getProp("userPhoneNumberId"))
 			.sendKeys(phone);
 		}
 		
-		public static void enterEmail(String email) { //can be multiple possiblities here
+		public static void enterEmail(String email) { 
 			driverWrapper
 			.getVisibleElementById(propertiesWrapper.getProp("userEmailAddressInput"))
 			.sendKeys(email);
 		}
 		
-		public static void enterCity(String randTxt) { //can be multiple possiblities here
+		public static void enterCity(String randTxt) { 
 			driverWrapper
 			.getVisibleElementById(propertiesWrapper.getProp("cityNameInputId"))
 			.sendKeys(randTxt);

@@ -11,7 +11,7 @@ public class GenericPageObject {
 		driverWrapper = _driverWrapper;
 	}
 	
-	public static void setPropertiesDriver(PropertiesWrapper _propertiesWrapper) {
+	public static void setProperties(PropertiesWrapper _propertiesWrapper) {
 		propertiesWrapper = _propertiesWrapper;
 	}
 		
