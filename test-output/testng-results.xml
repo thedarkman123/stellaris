@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="4" passed="2">
+<testng-results skipped="0" failed="4" ignored="0" total="4" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Stellares Suite" duration-ms="40907" started-at="2018-11-24T08:34:40Z" finished-at="2018-11-24T08:35:21Z">
+  <suite name="Stellares Suite" duration-ms="68313" started-at="2018-11-25T10:52:15Z" finished-at="2018-11-25T10:53:23Z">
     <groups>
     </groups>
-    <test name="HappyFlowChromeTest" duration-ms="20484" started-at="2018-11-24T08:34:40Z" finished-at="2018-11-24T08:35:00Z">
+    <test name="HappyFlowChromeTest" duration-ms="33515" started-at="2018-11-25T10:52:15Z" finished-at="2018-11-25T10:52:48Z">
       <class name="testcases.HappyFlowTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="setup" is-config="true" duration-ms="3231" started-at="2018-11-24T08:34:40Z" finished-at="2018-11-24T08:34:43Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="setup" is-config="true" duration-ms="3330" started-at="2018-11-25T10:52:15Z" finished-at="2018-11-25T10:52:18Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,56 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@6e6c3152]" name="completeFlowTest" duration-ms="10190" started-at="2018-11-24T08:34:43Z" finished-at="2018-11-24T08:34:53Z">
+        <test-method status="FAIL" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@6e6c3152]" name="completeFlowTest" duration-ms="23037" started-at="2018-11-25T10:52:18Z" finished-at="2018-11-25T10:52:41Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at utilities.WebDriverWrapper.getElementByType(WebDriverWrapper.java:95)
+at utilities.WebDriverWrapper.getVisibleElementById(WebDriverWrapper.java:135)
+at pageobject.PageObjects$StellarApplication.enterFirstName(PageObjects.java:72)
+at pageobject.PageObjects$StellarApplication.personalInformationStep(PageObjects.java:27)
+at testcases.HappyFlowTest.completeFlowTest(HappyFlowTest.java:21)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- completeFlowTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="teardown" is-config="true" duration-ms="629" started-at="2018-11-24T08:34:53Z" finished-at="2018-11-24T08:34:54Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="teardown" is-config="true" duration-ms="634" started-at="2018-11-25T10:52:41Z" finished-at="2018-11-25T10:52:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="setup" is-config="true" duration-ms="2539" started-at="2018-11-24T08:34:54Z" finished-at="2018-11-24T08:34:56Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="setup" is-config="true" duration-ms="2448" started-at="2018-11-25T10:52:42Z" finished-at="2018-11-25T10:52:45Z">
           <params>
             <param index="0">
               <value>
@@ -37,7 +78,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@6e6c3152]" name="missingInfoTest" duration-ms="2906" started-at="2018-11-24T08:34:56Z" finished-at="2018-11-24T08:34:59Z">
+        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@6e6c3152]" name="missingInfoTest" duration-ms="2790" started-at="2018-11-25T10:52:45Z" finished-at="2018-11-25T10:52:47Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [personal-info] but found [career]]]>
@@ -82,15 +123,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- missingInfoTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="teardown" is-config="true" duration-ms="623" started-at="2018-11-24T08:35:00Z" finished-at="2018-11-24T08:35:00Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@6e6c3152]" name="teardown" is-config="true" duration-ms="628" started-at="2018-11-25T10:52:48Z" finished-at="2018-11-25T10:52:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- testcases.HappyFlowTest -->
     </test> <!-- HappyFlowChromeTest -->
-    <test name="HappyFlowFirefoxTest" duration-ms="20365" started-at="2018-11-24T08:35:00Z" finished-at="2018-11-24T08:35:21Z">
+    <test name="HappyFlowFirefoxTest" duration-ms="34769" started-at="2018-11-25T10:52:48Z" finished-at="2018-11-25T10:53:23Z">
       <class name="testcases.HappyFlowTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="setup" is-config="true" duration-ms="3113" started-at="2018-11-24T08:35:00Z" finished-at="2018-11-24T08:35:03Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="setup" is-config="true" duration-ms="3091" started-at="2018-11-25T10:52:48Z" finished-at="2018-11-25T10:52:51Z">
           <params>
             <param index="0">
               <value>
@@ -101,15 +142,56 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@3fd7a715]" name="completeFlowTest" duration-ms="9187" started-at="2018-11-24T08:35:03Z" finished-at="2018-11-24T08:35:13Z">
+        <test-method status="FAIL" signature="completeFlowTest()[pri:1, instance:testcases.HappyFlowTest@3fd7a715]" name="completeFlowTest" duration-ms="23226" started-at="2018-11-25T10:52:51Z" finished-at="2018-11-25T10:53:15Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at utilities.WebDriverWrapper.getElementByType(WebDriverWrapper.java:95)
+at utilities.WebDriverWrapper.getVisibleElementById(WebDriverWrapper.java:135)
+at pageobject.PageObjects$StellarApplication.enterFirstName(PageObjects.java:72)
+at pageobject.PageObjects$StellarApplication.personalInformationStep(PageObjects.java:27)
+at testcases.HappyFlowTest.completeFlowTest(HappyFlowTest.java:21)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- completeFlowTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="teardown" is-config="true" duration-ms="869" started-at="2018-11-24T08:35:13Z" finished-at="2018-11-24T08:35:13Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="teardown" is-config="true" duration-ms="791" started-at="2018-11-25T10:53:15Z" finished-at="2018-11-25T10:53:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="setup" is-config="true" duration-ms="3063" started-at="2018-11-24T08:35:13Z" finished-at="2018-11-24T08:35:17Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="setup" is-config="true" duration-ms="3088" started-at="2018-11-25T10:53:16Z" finished-at="2018-11-25T10:53:19Z">
           <params>
             <param index="0">
               <value>
@@ -120,7 +202,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@3fd7a715]" name="missingInfoTest" duration-ms="3076" started-at="2018-11-24T08:35:17Z" finished-at="2018-11-24T08:35:20Z">
+        <test-method status="FAIL" signature="missingInfoTest()[pri:2, instance:testcases.HappyFlowTest@3fd7a715]" name="missingInfoTest" duration-ms="3102" started-at="2018-11-25T10:53:19Z" finished-at="2018-11-25T10:53:22Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [personal-info] but found [career]]]>
@@ -165,7 +247,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- missingInfoTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="teardown" is-config="true" duration-ms="741" started-at="2018-11-24T08:35:20Z" finished-at="2018-11-24T08:35:21Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.HappyFlowTest@3fd7a715]" name="teardown" is-config="true" duration-ms="851" started-at="2018-11-25T10:53:22Z" finished-at="2018-11-25T10:53:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -25,12 +25,12 @@ public class WebDriverWrapper {
 	}
 	
 	public String getBrowserName() {
-	    Capabilities cap = ((RemoteWebDriver) this.wb).getCapabilities();
+	    Capabilities cap = ((RemoteWebDriver)wb).getCapabilities();
 	    return cap.getBrowserName().toLowerCase();
 	}
 	
 	public String getPlatform() {
-		Capabilities cap = ((RemoteWebDriver) this.wb).getCapabilities();
+		Capabilities cap = ((RemoteWebDriver)wb).getCapabilities();
 		return cap.getPlatform().toString();
 	}
 	

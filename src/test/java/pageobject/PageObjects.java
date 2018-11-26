@@ -17,8 +17,8 @@ public class PageObjects  {
 		//step 1
 		public static void careerStep() {
 			enterCity(TestUtils.generateString(8));
-			chooseOptionOccupationByIndex(1);
-			chooseUserStatusByIndex(1);
+//			chooseOptionOccupationByIndex(1);
+//			chooseUserStatusByIndex(1);
 			goToNextStep();
 		}
 		

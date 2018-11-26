@@ -44,7 +44,7 @@ public class CustomListeners implements ITestListener {
 
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Tests done");
 	}
 
 }
