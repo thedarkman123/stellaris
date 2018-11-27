@@ -9,14 +9,14 @@
   <test name="HappyFlowChromeTest">
 	  <parameter name="browser" value="chrome">
 		   <classes>
-		      <class name="testcases.HappyFlowTest"/>
+		      <class name="testcases.NewFlowTest"/>
 		   </classes>
 	  </parameter>
   </test> 
     <test name="HappyFlowFirefoxTest">
 	  <parameter name="browser" value="firefox">
 		   <classes>
-		      <class name="testcases.HappyFlowTest"/>
+		      <class name="testcases.NewFlowTest"/>
 		   </classes>
 	  </parameter>
   	</test> 

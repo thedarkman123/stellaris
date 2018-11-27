@@ -1,5 +1,6 @@
 package testcases;
 
+import org.apache.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -11,7 +12,7 @@ import utilities.WebDriverWrapper;
 public class BaseTest {
 	protected static WebDriverWrapper driverWrapper;
 	protected PropertiesWrapper or; //object repository
-
+	Logger log = Logger.getLogger("appLogger");
 	//initializations goes here
 	@BeforeMethod
 	@Parameters("browser")
@@ -25,6 +26,7 @@ public class BaseTest {
 
 		GenericPageObject.setWebDriver(driverWrapper);
 		GenericPageObject.setProperties(or);//the only needed properties file
+		log.debug("we are going forward");
 	}
 	
 	@AfterMethod

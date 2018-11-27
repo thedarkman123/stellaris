@@ -11,14 +11,18 @@ import utilities.WebDriverWrapper.CONDITIONTYPE;
 import utilities.WebDriverWrapper.FINDTYPE;
 
 public class PageObjects  {
+	
+	public static class StellaresTrueApplication extends GenericPageObject{
+		
+	}
 
 	public static class StellarApplication extends GenericPageObject{
 		
 		//step 1
 		public static void careerStep() {
 			enterCity(TestUtils.generateString(8));
-//			chooseOptionOccupationByIndex(1);
-//			chooseUserStatusByIndex(1);
+			chooseOptionOccupationByIndex(1);
+			chooseUserStatusByIndex(1);
 			goToNextStep();
 		}
 		
