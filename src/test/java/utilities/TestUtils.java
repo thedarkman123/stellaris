@@ -25,7 +25,7 @@ public class TestUtils extends BaseTest {
 	}
 	
 	public static WebDriverWrapper getWrapperInstance() {
-		return driverWrapper;
+		return dw;
 	}
 	
 	public static String generateString(int length){

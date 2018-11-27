@@ -13,6 +13,10 @@ public class NewFlowTest extends BaseTest {
 	public void goodTest() {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
+		dw.typeInElement(
+		dw.getPresentElementById("geocomplet"), 
+		"something");
+		
 //		//step 1: Career step
 //		StellarApplication.careerStep();
 //		    

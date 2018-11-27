@@ -101,6 +101,7 @@ public class WebDriverWrapper {
 			}
 
 		} catch (Exception e) {
+			Reporter.log(txtForLog + " Failed: " + e.getMessage());
 			e.printStackTrace();
 		}
 
@@ -115,6 +116,11 @@ public class WebDriverWrapper {
 	public void clickElement(WebElement wb) {
 		Reporter.log("Clicking");
 		wb.click();
+	}
+	
+	public void typeInElement(WebElement wb,String strToType) {
+		Reporter.log("Typing: "+strToType);
+		wb.sendKeys(strToType);
 	}
 	
 	public List<WebElement> getElements(String value) {
@@ -153,6 +159,34 @@ public class WebDriverWrapper {
 	
 	public WebElement getVisibleElementByXpath(String xpath) {
 		return getElementByType(xpath,FINDTYPE.XPATH,CONDITIONTYPE.VISIBLE);
+	}
+	
+	public WebElement getVisibleElementByTagName(String tagName) {
+		return getElementByType(tagName,FINDTYPE.TAG,CONDITIONTYPE.VISIBLE);
+	}
+	
+	public WebElement getClickableElementById(String id) {
+		return getElementByType(id,FINDTYPE.ID,CONDITIONTYPE.CLICKABLE);
+	}
+	
+	public WebElement getClickableElementByXpath(String xpath) {
+		return getElementByType(xpath,FINDTYPE.XPATH,CONDITIONTYPE.CLICKABLE);
+	}
+	
+	public WebElement getClickableElementByTagName(String tagName) {
+		return getElementByType(tagName,FINDTYPE.TAG,CONDITIONTYPE.CLICKABLE);
+	}
+	
+	public WebElement getPresentElementById(String id) {
+		return getElementByType(id,FINDTYPE.ID,CONDITIONTYPE.PRESENT);
+	}
+	
+	public WebElement getPresentElementByXpath(String xpath) {
+		return getElementByType(xpath,FINDTYPE.XPATH,CONDITIONTYPE.PRESENT);
+	}
+	
+	public WebElement getPresentElementByTagName(String tagName) {
+		return getElementByType(tagName,FINDTYPE.TAG,CONDITIONTYPE.PRESENT);
 	}
 
 	public void quit() {

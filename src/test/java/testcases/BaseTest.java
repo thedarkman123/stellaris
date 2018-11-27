@@ -11,7 +11,7 @@ import utilities.PropertiesWrapper;
 import utilities.WebDriverWrapper;
 
 public class BaseTest {
-	protected static WebDriverWrapper driverWrapper;
+	protected static WebDriverWrapper dw;
 	protected PropertiesWrapper or; //object repository
 	Logger log = Logger.getLogger("appLogger");
 	
@@ -22,11 +22,11 @@ public class BaseTest {
 		//a wrapper for properties, or stands for OBJECT REPOSITORY 
 		or = new PropertiesWrapper("OR");
 		//a wrapper for the webdriver
-		driverWrapper = new WebDriverWrapper();
+		dw = new WebDriverWrapper();
 		//here we can add the propery for the browser we initiate the test OR using annotation
-		driverWrapper.init(browser); 
+		dw.init(browser); 
 
-		GenericPageObject.setWebDriver(driverWrapper);
+		GenericPageObject.setWebDriver(dw);
 		GenericPageObject.setProperties(or);//the only needed properties file
 		log.debug("we are going forward");
 	}
@@ -34,6 +34,6 @@ public class BaseTest {
 	@AfterMethod
 	public void teardown() {
 		//do everything related to closing and removing stuff here
-		driverWrapper.quit(); //close the browser		
+		dw.quit(); //close the browser		
 	}
 }

@@ -3,6 +3,7 @@ package listeners;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 import testcases.BaseTest;
 import utilities.TestUtils;
@@ -19,10 +20,8 @@ public class CustomListeners implements ITestListener {
 		System.out.println(result.getName().toString() + " success");
 	}
 
-	public void onTestFailure(ITestResult result) {
-		//usually should be logged, but no need for that, so only console printing
-		System.out.print(result.getName() + " failed: ");
-		System.out.println(result.getThrowable().getMessage().toString());
+	public void onTestFailure(ITestResult result) {		
+		Reporter.log(result.getName() + " failed: " + result.getThrowable().getMessage().toString());
 		String fileName = result.getName();
 		String browserName = TestUtils.getWrapperInstance().getBrowserName();
 		TestUtils.captureScreenshot(fileName,browserName);

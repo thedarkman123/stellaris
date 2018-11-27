@@ -30,7 +30,7 @@ public class HappyFlowTest extends BaseTest {
 	    StellarApplication.yourCommitmentStep();
 	    
 	    //The assert
-	    String titleOfLastScreen = driverWrapper
+	    String titleOfLastScreen = dw
 	    		.getElementByType("h2",FINDTYPE.TAG,CONDITIONTYPE.VISIBLE)
 	    		.getText();
 	    Assert.assertEquals(titleOfLastScreen, or.getProp("titleOfLastScreen"));
@@ -47,7 +47,7 @@ public class HappyFlowTest extends BaseTest {
 		StellarApplication.goToNextStep();
 		
 		//get this active page id
-	    String titleOfCurrentActivePanel = driverWrapper.getElementByType(or.getProp("currentActivePanelXpath"),FINDTYPE.XPATH,CONDITIONTYPE.PRESENT)
+	    String titleOfCurrentActivePanel = dw.getElementByType(or.getProp("currentActivePanelXpath"),FINDTYPE.XPATH,CONDITIONTYPE.PRESENT)
 		.getAttribute("id");
 	    
 	    Assert.assertEquals(titleOfCurrentActivePanel, or.getProp("titleOfPersonalInfoPanel"));
