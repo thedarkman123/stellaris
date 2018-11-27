@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Stellares Suite]">
-  <listeners>
-    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-    <listener class-name="listeners.CustomListeners"/>
-  </listeners>
-  <test thread-count="5" name="HappyFlowChromeTest(failed)">
-    <parameter name="browser" value="chrome"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="testcases.HappyFlowTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="completeFlowTest"/>
+          <include name="setup"/>
+          <include name="missingInfoTest"/>
+        </methods>
+      </class> <!-- testcases.HappyFlowTest -->
       <class name="testcases.NewFlowTest">
         <methods>
           <include name="teardown"/>
@@ -17,17 +19,5 @@
         </methods>
       </class> <!-- testcases.NewFlowTest -->
     </classes>
-  </test> <!-- HappyFlowChromeTest(failed) -->
-  <test thread-count="5" name="HappyFlowFirefoxTest(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="testcases.NewFlowTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="goodTest"/>
-        </methods>
-      </class> <!-- testcases.NewFlowTest -->
-    </classes>
-  </test> <!-- HappyFlowFirefoxTest(failed) -->
-</suite> <!-- Failed suite [Stellares Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

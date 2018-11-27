@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="23.628">
+           time="24.382">
   <properties />
-            <testcase name="goodTest" time="23.628" classname="testcases.NewFlowTest">
+            <testcase name="goodTest" time="24.382" classname="testcases.NewFlowTest">
                 <failure type="java.lang.AssertionError"
                   message="null"
               >

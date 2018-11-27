@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Random;
 
 import org.openqa.selenium.OutputType;
@@ -12,8 +13,8 @@ import com.google.common.io.Files;
 import testcases.BaseTest;
 
 public class TestUtils extends BaseTest {
-	public static void captureScreenshot(String fileName,String directory) {
-		String pathToFile = System.getProperty("user.dir") + "\\test-output\\html\\" + directory +"\\"+ fileName + ".png";
+	public static String captureScreenshot(String fileName,String directory) {
+		String pathToFile = System.getProperty("user.dir") + "\\src\\test\\resources\\screenshots\\" + directory +"\\"+ fileName + ".png";
 		try {
 			File scrFile = ((TakesScreenshot)getWrapperInstance().getWbInstance()).getScreenshotAs(OutputType.FILE);
 			File newFileToCreate = new File(pathToFile);	
@@ -22,6 +23,7 @@ public class TestUtils extends BaseTest {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return pathToFile;
 	}
 	
 	public static WebDriverWrapper getWrapperInstance() {
@@ -36,5 +38,9 @@ public class TestUtils extends BaseTest {
 	        text[i] = characters.charAt(rng.nextInt(characters.length()));
 	    }
 	    return new String(text);
+	}
+	
+	public static String getCurrentTimeForScreenshot() {
+		return new Date().toString().replace(":","_").replace(" ", "_");
 	}
 }

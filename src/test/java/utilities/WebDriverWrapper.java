@@ -88,7 +88,7 @@ public class WebDriverWrapper {
 		txtForLog += value;
 
 		try {
-			WebDriverWait driverWait = new WebDriverWait(wb, 20, 1000);
+			WebDriverWait driverWait = new WebDriverWait(wb, 10, 1000);
 			if (condition == CONDITIONTYPE.PRESENT) {
 				txtForLog += " When present";
 				element = driverWait.until(ExpectedConditions.presenceOfElementLocated(by));	

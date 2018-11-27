@@ -11,6 +11,13 @@
           <include name="missingInfoTest"/>
         </methods>
       </class> <!-- testcases.HappyFlowTest -->
+      <class name="testcases.NewFlowTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="goodTest"/>
+        </methods>
+      </class> <!-- testcases.NewFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

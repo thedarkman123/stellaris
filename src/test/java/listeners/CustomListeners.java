@@ -20,11 +20,15 @@ public class CustomListeners implements ITestListener {
 		System.out.println(result.getName().toString() + " success");
 	}
 
-	public void onTestFailure(ITestResult result) {		
-		Reporter.log(result.getName() + " failed: " + result.getThrowable().getMessage().toString());
-		String fileName = result.getName();
+	public void onTestFailure(ITestResult result) {	
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		String fileName    = result.getName() + TestUtils.getCurrentTimeForScreenshot();
 		String browserName = TestUtils.getWrapperInstance().getBrowserName();
-		TestUtils.captureScreenshot(fileName,browserName);
+		String pathToFile  = TestUtils.captureScreenshot(fileName,browserName);
+		Reporter.log("<br>");
+		Reporter.log(result.getName() + " failed: " + result.getThrowable().getMessage().toString());
+		Reporter.log("<br>");
+		Reporter.log("<a target=\"_blank\" href=" + pathToFile + ">Screenshot</a>");
 	}
 
 	public void onTestSkipped(ITestResult result) {
