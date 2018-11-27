@@ -1,5 +1,7 @@
 package pageobject;
 
+import org.testng.Reporter;
+
 import utilities.PropertiesWrapper;
 import utilities.WebDriverWrapper;
 
@@ -16,6 +18,7 @@ public class GenericPageObject {
 	}
 		
 	public static void openUrl(String urlToOpen) {
+		Reporter.log("Entered site " + urlToOpen);
 		driverWrapper.openUrl(urlToOpen);
 	}
 }

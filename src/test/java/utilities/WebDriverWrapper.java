@@ -14,6 +14,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 
 public class WebDriverWrapper {
@@ -41,10 +42,12 @@ public class WebDriverWrapper {
 
 	public void init(String browser) {
 		if (browser.equals("chrome")) {
+			Reporter.log("initiating chrome");
 			System.setProperty("webdriver.chrome.driver", 
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\chromedriver.exe");
 			wb = new ChromeDriver();
 		} else if (browser.equals("firefox")) {
+			Reporter.log("initiating firefox");
 			System.setProperty("webdriver.gecko.driver", 
 					System.getProperty("user.dir")+"\\src\\test\\resources\\excutables\\geckodriver.exe");
 			wb = new FirefoxDriver(); 
@@ -52,6 +55,7 @@ public class WebDriverWrapper {
 	}
 
 	public void openUrl(String url) {
+		Reporter.log("Opening url:" + url);
 		wb.get(url);
 	}
 	
@@ -65,25 +69,34 @@ public class WebDriverWrapper {
 
 	//explicit wait find
 	public WebElement getElementByType(String value, FINDTYPE type, CONDITIONTYPE condition) {
+		String txtForLog = "";
 		WebElement element = null;
 
 		By by = null;
 
 		if (type == FINDTYPE.XPATH) {
+			txtForLog += "Find By Xpath: ";
 			by = By.xpath(value);
 		} else if (type == FINDTYPE.ID) {
+			txtForLog += "Find By Id: ";
 			by = By.id(value);
 		} else if(type == FINDTYPE.TAG) {
+			txtForLog += "Find By Tag: ";
 			by = By.tagName(value);
 		}
+		
+		txtForLog += value;
 
 		try {
 			WebDriverWait driverWait = new WebDriverWait(wb, 20, 1000);
 			if (condition == CONDITIONTYPE.PRESENT) {
+				txtForLog += " When present";
 				element = driverWait.until(ExpectedConditions.presenceOfElementLocated(by));	
 			} else if (condition == CONDITIONTYPE.CLICKABLE) {
+				txtForLog += " When clickable";
 				element = driverWait.until(ExpectedConditions.elementToBeClickable(by));
 			} else if (condition == CONDITIONTYPE.VISIBLE) {
+				txtForLog += " When visible";
 				element = driverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			}
 
@@ -95,20 +108,23 @@ public class WebDriverWrapper {
 			Assert.fail();
 		}
 
+		Reporter.log(txtForLog);
 		return element;
-
+	}
+	
+	public void clickElement(WebElement wb) {
+		Reporter.log("Clicking");
+		wb.click();
 	}
 	
 	public List<WebElement> getElements(String value) {
 		List<WebElement> elements = null;
 		By by = By.xpath(value);
 		try {
-			WebDriverWait driverWait = new WebDriverWait(wb, 20, 1000);
+			WebDriverWait driverWait = new WebDriverWait(wb, 10, 1000);
 			//default
 			elements = driverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
 
-		} catch (TimeoutException e) {
-			System.out.println("");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -140,6 +156,7 @@ public class WebDriverWrapper {
 	}
 
 	public void quit() {
+		Reporter.log("Quiting browser");
 		wb.quit();
 	}
 

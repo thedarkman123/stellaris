@@ -1,6 +1,7 @@
 package testcases;
 
 import org.apache.log4j.Logger;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -13,6 +14,7 @@ public class BaseTest {
 	protected static WebDriverWrapper driverWrapper;
 	protected PropertiesWrapper or; //object repository
 	Logger log = Logger.getLogger("appLogger");
+	
 	//initializations goes here
 	@BeforeMethod
 	@Parameters("browser")

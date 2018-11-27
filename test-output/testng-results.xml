@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
+    <line>
+      <![CDATA[Entered site https://btc-gain.com/]]>
+    </line>
+    <line>
+      <![CDATA[Entered site https://btc-gain.com/]]>
+    </line>
   </reporter-output>
-  <suite name="Stellares Suite" duration-ms="52089" started-at="2018-11-27T08:12:27Z" finished-at="2018-11-27T08:13:19Z">
+  <suite name="Stellares Suite" duration-ms="21760" started-at="2018-11-27T09:25:33Z" finished-at="2018-11-27T09:25:55Z">
     <groups>
     </groups>
-    <test name="HappyFlowChromeTest" duration-ms="22554" started-at="2018-11-27T08:12:27Z" finished-at="2018-11-27T08:12:50Z">
+    <test name="HappyFlowChromeTest" duration-ms="10986" started-at="2018-11-27T09:25:33Z" finished-at="2018-11-27T09:25:44Z">
       <class name="testcases.NewFlowTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.NewFlowTest@c46bcd4]" name="setup" is-config="true" duration-ms="2952" started-at="2018-11-27T08:12:27Z" finished-at="2018-11-27T08:12:30Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.NewFlowTest@42f93a98]" name="setup" is-config="true" duration-ms="3180" started-at="2018-11-27T09:25:33Z" finished-at="2018-11-27T09:25:37Z">
           <params>
             <param index="0">
               <value>
@@ -18,38 +24,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="goodTest()[pri:1, instance:testcases.NewFlowTest@c46bcd4]" name="goodTest" duration-ms="7520" started-at="2018-11-27T08:12:30Z" finished-at="2018-11-27T08:12:38Z">
+        <test-method status="PASS" signature="goodTest()[pri:1, instance:testcases.NewFlowTest@42f93a98]" name="goodTest" duration-ms="7105" started-at="2018-11-27T09:25:37Z" finished-at="2018-11-27T09:25:44Z">
           <reporter-output>
+            <line>
+              <![CDATA[Entered site https://btc-gain.com/]]>
+            </line>
           </reporter-output>
         </test-method> <!-- goodTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.NewFlowTest@c46bcd4]" name="teardown" is-config="true" duration-ms="626" started-at="2018-11-27T08:12:38Z" finished-at="2018-11-27T08:12:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.NewFlowTest@c46bcd4]" name="setup" is-config="true" duration-ms="2001" started-at="2018-11-27T08:12:38Z" finished-at="2018-11-27T08:12:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="failedTest()[pri:2, instance:testcases.NewFlowTest@c46bcd4]" name="failedTest" duration-ms="8781" started-at="2018-11-27T08:12:40Z" finished-at="2018-11-27T08:12:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failedTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.NewFlowTest@c46bcd4]" name="teardown" is-config="true" duration-ms="616" started-at="2018-11-27T08:12:49Z" finished-at="2018-11-27T08:12:50Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.NewFlowTest@42f93a98]" name="teardown" is-config="true" duration-ms="635" started-at="2018-11-27T09:25:44Z" finished-at="2018-11-27T09:25:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- testcases.NewFlowTest -->
     </test> <!-- HappyFlowChromeTest -->
-    <test name="HappyFlowFirefoxTest" duration-ms="29491" started-at="2018-11-27T08:12:50Z" finished-at="2018-11-27T08:13:19Z">
+    <test name="HappyFlowFirefoxTest" duration-ms="10724" started-at="2018-11-27T09:25:44Z" finished-at="2018-11-27T09:25:55Z">
       <class name="testcases.NewFlowTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.NewFlowTest@7b69c6ba]" name="setup" is-config="true" duration-ms="3442" started-at="2018-11-27T08:12:50Z" finished-at="2018-11-27T08:12:53Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.NewFlowTest@7b69c6ba]" name="setup" is-config="true" duration-ms="3956" started-at="2018-11-27T09:25:44Z" finished-at="2018-11-27T09:25:48Z">
           <params>
             <param index="0">
               <value>
@@ -60,30 +50,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="goodTest()[pri:1, instance:testcases.NewFlowTest@7b69c6ba]" name="goodTest" duration-ms="8331" started-at="2018-11-27T08:12:53Z" finished-at="2018-11-27T08:13:02Z">
+        <test-method status="PASS" signature="goodTest()[pri:1, instance:testcases.NewFlowTest@7b69c6ba]" name="goodTest" duration-ms="5292" started-at="2018-11-27T09:25:48Z" finished-at="2018-11-27T09:25:54Z">
           <reporter-output>
+            <line>
+              <![CDATA[Entered site https://btc-gain.com/]]>
+            </line>
           </reporter-output>
         </test-method> <!-- goodTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.NewFlowTest@7b69c6ba]" name="teardown" is-config="true" duration-ms="1247" started-at="2018-11-27T08:13:02Z" finished-at="2018-11-27T08:13:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testcases.NewFlowTest@7b69c6ba]" name="setup" is-config="true" duration-ms="3870" started-at="2018-11-27T08:13:03Z" finished-at="2018-11-27T08:13:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="failedTest()[pri:2, instance:testcases.NewFlowTest@7b69c6ba]" name="failedTest" duration-ms="10820" started-at="2018-11-27T08:13:07Z" finished-at="2018-11-27T08:13:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failedTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.NewFlowTest@7b69c6ba]" name="teardown" is-config="true" duration-ms="1773" started-at="2018-11-27T08:13:17Z" finished-at="2018-11-27T08:13:19Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testcases.NewFlowTest@7b69c6ba]" name="teardown" is-config="true" duration-ms="1472" started-at="2018-11-27T09:25:54Z" finished-at="2018-11-27T09:25:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
