@@ -6,19 +6,23 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import com.google.common.html.HtmlEscapers;
+import com.relevantcodes.extentreports.LogStatus;
 
 import utilities.TestUtils;
 
-public class CustomListeners implements ITestListener {
+public class CustomListeners extends TestUtils implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-		
+		test = rep.startTest(result.getName());
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		System.out.println(result.getName().toString() + " success");
+		test.log(LogStatus.PASS, result.getName() + " PASSED");
+		rep.endTest(test);
+		rep.flush();
 	}
 
 	public void onTestFailure(ITestResult result) {	
@@ -27,8 +31,14 @@ public class CustomListeners implements ITestListener {
 		String browserName = TestUtils.getWrapperInstance().getBrowserName();
 		String pathToFile  = TestUtils.captureScreenshot(fileName,browserName);
 		String errToPrint  = HtmlEscapers.htmlEscaper().escape(result.getThrowable().getMessage().toString());
+		
 		Reporter.log(result.getName() + " failed: " + errToPrint);
 		Reporter.log("<a target=\"_blank\" href=" + pathToFile + ">Screenshot</a>");
+	
+		test.log(LogStatus.FAIL, result.getName() + " Failed,exception: " + errToPrint);
+		test.log(LogStatus.FAIL,test.addScreenCapture(pathToFile));
+		rep.endTest(test);
+		rep.flush();
 	}
 
 	public void onTestSkipped(ITestResult result) {

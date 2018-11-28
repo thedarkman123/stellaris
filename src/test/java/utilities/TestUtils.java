@@ -9,10 +9,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import com.google.common.io.Files;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import testcases.BaseTest;
 
 public class TestUtils extends BaseTest {
+	//extent report bit, used in the listeners
+	public static ExtentReports rep = ExtentManager.getInstance();
+	public static ExtentTest test;
+	
 	public static String captureScreenshot(String fileName,String directory) {
 		String pathToFile = System.getProperty("user.dir") + "\\src\\test\\resources\\screenshots\\" + directory +"\\"+ fileName + ".png";
 		try {
@@ -43,4 +49,5 @@ public class TestUtils extends BaseTest {
 	public static String getCurrentTimeForScreenshot() {
 		return new Date().toString().replace(":","_").replace(" ", "_");
 	}
+	
 }
