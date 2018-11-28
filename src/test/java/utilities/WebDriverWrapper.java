@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 
 public class WebDriverWrapper {
 	
@@ -102,7 +104,9 @@ public class WebDriverWrapper {
 			}
 
 		} catch (Exception e) {
-			Reporter.log(txtForLog + " Failed: " + e.getMessage());
+			txtForLog += " Failed: " + e.getMessage();
+			Reporter.log(txtForLog);
+			TestUtils.test.log(LogStatus.INFO, txtForLog);
 			e.printStackTrace();
 		}
 
@@ -110,21 +114,25 @@ public class WebDriverWrapper {
 			Assert.fail();
 		}
 
+		TestUtils.test.log(LogStatus.INFO, txtForLog);
 		Reporter.log(txtForLog);
 		return element;
 	}
 	
 	public void clickElement(WebElement wb) {
+		TestUtils.test.log(LogStatus.INFO, "Clicking");
 		Reporter.log("Clicking");
 		wb.click();
 	}
 	
 	public void typeInElement(WebElement wb,String strToType) {
+		TestUtils.test.log(LogStatus.INFO, "Typing: "+strToType);
 		Reporter.log("Typing: "+strToType);
 		wb.sendKeys(strToType);
 	}
 	
 	public void selectElementByIndex(WebElement el,int choiceNum) {
+		TestUtils.test.log(LogStatus.INFO, "Selecting choice: "+choiceNum);
 		Reporter.log("Selecting choice: "+choiceNum);
 		Select s = new Select(el);
 		s.selectByIndex(choiceNum);
@@ -148,16 +156,6 @@ public class WebDriverWrapper {
 		}
 
 		return elements;
-	}
-
-	public List<WebElement> get_Elements(By by) {
-		List<WebElement> elements = wb.findElements(by);
-		return (elements != null) ? elements : null ;
-	}
-	//simple find
-	public WebElement get_Element(By by) {
-		WebElement element = wb.findElement(by);
-		return (element != null) ? element : null ;
 	}
 	
 	public WebElement getVisibleElementById(String id) {

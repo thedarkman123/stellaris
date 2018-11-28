@@ -14,15 +14,15 @@ public class CustomListeners extends TestUtils implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-		test = rep.startTest(result.getName());
+		test = getReportInstance().startTest(result.getName());
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		System.out.println(result.getName().toString() + " success");
 		test.log(LogStatus.PASS, result.getName() + " PASSED");
-		rep.endTest(test);
-		rep.flush();
+		getReportInstance().endTest(test);
+		getReportInstance().flush();
 	}
 
 	public void onTestFailure(ITestResult result) {	
@@ -37,8 +37,8 @@ public class CustomListeners extends TestUtils implements ITestListener {
 	
 		test.log(LogStatus.FAIL, result.getName() + " Failed,exception: " + errToPrint);
 		test.log(LogStatus.FAIL,test.addScreenCapture(pathToFile));
-		rep.endTest(test);
-		rep.flush();
+		getReportInstance().endTest(test);
+		getReportInstance().flush();
 	}
 
 	public void onTestSkipped(ITestResult result) {

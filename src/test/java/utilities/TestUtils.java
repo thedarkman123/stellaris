@@ -16,8 +16,12 @@ import testcases.BaseTest;
 
 public class TestUtils extends BaseTest {
 	//extent report bit, used in the listeners
-	public static ExtentReports rep = ExtentManager.getInstance();
+	private static ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest test;
+	
+	public ExtentReports getReportInstance() {
+		return rep;
+	}
 	
 	public static String captureScreenshot(String fileName,String directory) {
 		String pathToFile = System.getProperty("user.dir") + "\\src\\test\\resources\\screenshots\\" + directory +"\\"+ fileName + ".png";
