@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -123,6 +124,12 @@ public class WebDriverWrapper {
 		wb.sendKeys(strToType);
 	}
 	
+	public void selectElementByIndex(WebElement el,int choiceNum) {
+		Reporter.log("Selecting choice: "+choiceNum);
+		Select s = new Select(el);
+		s.selectByIndex(choiceNum);
+	}
+	
 	public List<WebElement> getElements(String value) {
 		List<WebElement> elements = null;
 		By by = By.xpath(value);
@@ -188,6 +195,8 @@ public class WebDriverWrapper {
 	public WebElement getPresentElementByTagName(String tagName) {
 		return getElementByType(tagName,FINDTYPE.TAG,CONDITIONTYPE.PRESENT);
 	}
+	
+	
 
 	public void quit() {
 		Reporter.log("Quiting browser");

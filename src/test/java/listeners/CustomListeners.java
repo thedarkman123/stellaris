@@ -5,7 +5,8 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import testcases.BaseTest;
+import com.google.common.html.HtmlEscapers;
+
 import utilities.TestUtils;
 
 public class CustomListeners implements ITestListener {
@@ -25,9 +26,8 @@ public class CustomListeners implements ITestListener {
 		String fileName    = result.getName() + TestUtils.getCurrentTimeForScreenshot();
 		String browserName = TestUtils.getWrapperInstance().getBrowserName();
 		String pathToFile  = TestUtils.captureScreenshot(fileName,browserName);
-		Reporter.log("<br>");
-		Reporter.log(result.getName() + " failed: " + result.getThrowable().getMessage().toString());
-		Reporter.log("<br>");
+		String errToPrint  = HtmlEscapers.htmlEscaper().escape(result.getThrowable().getMessage().toString());
+		Reporter.log(result.getName() + " failed: " + errToPrint);
 		Reporter.log("<a target=\"_blank\" href=" + pathToFile + ">Screenshot</a>");
 	}
 

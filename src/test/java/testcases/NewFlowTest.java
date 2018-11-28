@@ -14,8 +14,12 @@ public class NewFlowTest extends BaseTest {
 		GenericPageObject.openUrl(or.getProp("webUrl"));
 		
 		dw.typeInElement(
-		dw.getPresentElementById("geocomplet"), 
+		dw.getPresentElementById("geocomplete"), 
 		"something");
+		
+		dw.selectElementByIndex(
+		dw.getPresentElementByXpath("//select[@name='occupation']"),	
+		1);
 		
 //		//step 1: Career step
 //		StellarApplication.careerStep();
