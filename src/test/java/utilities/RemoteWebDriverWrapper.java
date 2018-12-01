@@ -18,10 +18,6 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import com.relevantcodes.extentreports.LogStatus;
-
-import utilities.WebDriverWrapper.CONDITIONTYPE;
-import utilities.WebDriverWrapper.FINDTYPE;
-
 public class RemoteWebDriverWrapper {
 	    //for thread context, seperate the instances of the program
 		public static ThreadLocal<RemoteWebDriver> dr = new ThreadLocal<RemoteWebDriver>();	
@@ -55,6 +51,14 @@ public class RemoteWebDriverWrapper {
 		
 		public void typeInElement(WebElement wb,String strToType) {
 			wb.sendKeys(strToType);
+		}
+		
+		public static enum FINDTYPE{
+			XPATH,ID,TAG
+		}
+		
+		public static enum CONDITIONTYPE{
+			VISIBLE,CLICKABLE,PRESENT
 		}
 		
 		//explicit wait find
