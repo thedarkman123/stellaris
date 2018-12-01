@@ -14,7 +14,7 @@
 	  </parameter>
   </test> 
     <test name="HappyFlowFirefoxTest">
-	  <parameter name="browser" value="firefox">
+	  <parameter name="browser" value="chrome">
 		   <classes>
 		      <class name="testcases.NewFlowTest"/>
 		   </classes>
